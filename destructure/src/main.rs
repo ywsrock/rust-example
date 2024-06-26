@@ -16,6 +16,7 @@ fn main() {
     // .. can be used to ignore some values
     // let (a, .., c) = tuple;
     // can be used onece only
+    #[allow(unused_variables)]
     match tuple {
         // single variable
         (1,..) => println!("tuple destructuring: a = {}", 1),
@@ -27,6 +28,7 @@ fn main() {
 
     // array and slice destructuring
     let array = [1, 2, 3];
+        #[allow(unused_variables)]
     match array {
         [a, b, c] => println!("array destructuring: a = {}, b = {}, c = {}", a, b, c),
         [a, ..] => println!("array destructuring: a = {}", a),
