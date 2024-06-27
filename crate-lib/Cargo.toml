@@ -1,0 +1,10 @@
+[package]
+name = "crate-lib"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "libTest"
+path = "src/yws.rs"
+
+[dependencies]
