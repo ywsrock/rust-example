@@ -1,0 +1,16 @@
+[package]
+name = "error-handle"
+version = "0.1.0"
+edition = "2021"
+
+[profile.dev]
+opt-level = 0
+panic = "abort"
+
+[profile.release]
+opt-level = 3
+lto = true
+panic = "abort"
+
+
+[dependencies]
