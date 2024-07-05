@@ -2,7 +2,7 @@
 /// 1. panic! macro: for unrecoverable errors, it will print the error message and exit the program
 /// 2. abort ,unwind, or custom panic handler: rustc main.rs -C panic=abort  #[cfg(panic = "unwind")]
 /// 3. Option<T> and unwrap: for recoverable errors, it will return the value if it is Some, otherwise it will panic
-/// 4. ? operator: reutrns the value if it is Some, otherwise it will return None
+/// 4. ? operator: return the value if it is Some, otherwise it will return None
 /// 5. add_then:  return the wrap value if it is Some, otherwise it will return None: ex: some(5).and_then(|x| Some(x+1)) => Some(6); x is 5
 /// 6. map: return the wrap value if it is Some, otherwise it will return None: ex: some(5).map(|x| x+1) => Some(6); x is 5 
 /// 7. or: if it is None, it will return the other value: ex: None.or(Some(5)) => Some(5)
@@ -14,6 +14,8 @@
 
 
 // Example 1: panic! macro
+#[allow(dead_code)]
+
 fn panic_example() {
     panic!("crash and burn");
 }
@@ -31,7 +33,7 @@ fn error_handler(s: &str) {
 
 #[cfg(panic = "abort")]
 fn error_handler(s: &str) {
-    // when not helllo, it will panic and abort the program
+    // when not hello, it will panic and abort the program
     if s != "hello" {
         panic!("crash and burn [abort] not hello");
     } else {
@@ -39,7 +41,7 @@ fn error_handler(s: &str) {
     }
 }
 
-// Eample 3: Option<T> and unwrap
+// Example 3: Option<T> and unwrap
 // some(T): value is present
 // None: value is absent
 fn option_example() {
